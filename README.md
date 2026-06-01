@@ -390,4 +390,717 @@ _A1 · Python-only (deterministic)_
 2. fill
 3. validate
 4. report
+
+#### 5. prompt-score-4axis  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-prompt
+2. tokenize
+3. score-specificity
+4. score-doctrine
+5. score-context
+6. score-actionability
+7. aggregate-grade
+8. report
+
+#### 6. prompt-enhance-inject  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. score
+2. detect-weaknesses
+3. inject-context
+4. add-acceptance-criteria
+5. add-verification
+6. rewrite
+7. rescore
+8. report
+
+#### 7. prompt-ab-test  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. parse-variants
+2. score-a
+3. score-b
+4. diff-axes
+5. declare-winner
+6. report
+
+#### 8. prompt-quick-score  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. read-stdin-or-arg
+2. score
+3. threshold-check
+4. emit
+
+#### 9. prompt-validate-clipboard  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. read-clipboard
+2. score
+3. report
+
+#### 10. prompt-master-fix  `A3`
+
+_A3 · Agent-bounded (budget-capped)_
+
+1. intake-prompt
+2. detect-mode
+3. gather-context
+4. redact-secrets
+5. select-enhancements
+6. rewrite
+7. attach-donecontract
+8. emit-md-json
+
+#### 11. prompt-master-claude-design  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. intake
+2. parse-pages
+3. build-walkthrough-steps
+4. add-screenshot-qa
+5. add-rig-branding
+6. assemble-prompt
+7. report
+
+#### 12. prompt-master-donecontract  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. extract-intent
+2. derive-acceptance
+3. derive-verification
+4. set-kill-criteria
+5. seal-contract
+
+#### 13. prompt-master-enhancement-pack  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. list-packs
+2. select
+3. validate-compat
+4. apply
+5. report
+
+#### 14. design-prompt-screenshot-repair  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. intake-screenshot-note
+2. infer-active-page
+3. build-repair-steps
+4. add-qa-loop
+5. emit
+
+#### 15. context-status-check  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. probe-git
+2. probe-qnap
+3. probe-github
+4. probe-gitea
+5. probe-recall
+6. probe-context-pack
+7. report-matrix
+
+#### 16. context-git-worksurface  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. read-git-status
+2. read-recent-commits
+3. read-branch
+4. read-changed-files
+5. summarize
+
+#### 17. context-github-enrich  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. read-remotes
+2. check-gh-auth
+3. fetch-repo-view
+4. parse-metadata
+5. merge-into-context
+
+#### 18. context-gitea-fetch  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-gitea-config
+2. validate-token
+3. fetch-repo
+4. fetch-issues
+5. merge-into-context
+
+#### 19. context-recall-search  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-recall-config
+2. build-query
+3. call-recall-search
+4. dedupe-results
+5. merge-into-context
+
+#### 20. context-qnap-mount  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. resolve-mount
+2. read-policy
+3. scan-paths
+4. summarize
+5. merge
+
+#### 21. context-secret-redaction  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. scan-for-secrets
+2. classify
+3. redact
+4. verify-clean
+5. emit
+
+#### 22. v15-catalog-audit  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-catalogs
+2. validate-schema
+3. recompute-hashes
+4. compare-pinned
+5. report-drift
+
+#### 23. v15-intake-full  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. parse-request
+2. classify-domain
+3. select-all-questions
+4. map-to-personas
+5. assemble-packet
+6. attach-gate-checklist
+7. emit
+
+#### 24. v15-intake-focused  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. parse-request
+2. classify-domain
+3. select-priority-questions
+4. assemble
+5. emit
+
+#### 25. v15-proofpacket-generate  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. slugify-title
+2. resolve-artifact-path
+3. fill-template
+4. add-gate-checklist
+5. write
+
+#### 26. v15-gate-checklist  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-gates
+2. bind-to-task
+3. mark-status
+4. report
+
+#### 27. v15-approval-boundary  `A4`
+
+_A4 · LLM-agent-free (crew)_
+
+1. classify-action
+2. detect-external-impact
+3. block-if-unsafe
+4. request-human-approval
+5. record-decision
+6. proceed-or-halt
+
+#### 28. catalog-resource-search  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-catalog
+2. parse-query
+3. rank
+4. format-results
+
+#### 29. catalog-resource-review  `A3`
+
+_A3 · Agent-bounded (budget-capped)_
+
+1. fetch-repo-metadata
+2. assess-license
+3. assess-rig-role
+4. define-first-experiment
+5. set-load-trigger
+6. draft-catalog-entry
+
+#### 30. catalog-harness-adopt  `A4`
+
+_A4 · LLM-agent-free (crew)_
+
+1. pin-commit
+2. license-review
+3. clone-to-sandbox
+4. sandbox-execute
+5. capture-proofpacket
+6. human-approval-gate
+7. promote-to-catalog
+
+#### 31. catalog-license-posture  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-entries
+2. read-licenses
+3. classify-posture
+4. flag-conflicts
+5. report
+
+#### 32. persona-lens-search  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-personas
+2. parse-query
+3. rank
+4. format
+
+#### 33. persona-panel-review  `A3`
+
+_A3 · Agent-bounded (budget-capped)_
+
+1. select-relevant-lenses
+2. load-question-subset
+3. run-lens-reviews
+4. collect-findings
+5. dedupe-severity
+6. synthesize-report
+
+#### 34. question-bank-filter  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-question-bank
+2. apply-filter
+3. map-to-personas
+4. emit
+
+#### 35. methodology-agent-build-review  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. intake-build-spec
+2. map-questions
+3. answer-or-flag
+4. score-readiness
+5. report-gaps
+
+#### 36. harness-session-audit  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. discover-session-paths
+2. parse-each-harness
+3. compute-metrics
+4. apply-rules
+5. aggregate
+6. report
+
+#### 37. harness-parse-claude  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-jsonl
+2. stream-parse
+3. extract-events
+4. normalize
+5. emit
+
+#### 38. harness-parse-codex  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-rollouts
+2. stream-parse
+3. normalize
+4. emit
+
+#### 39. harness-parse-opencode  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-storage
+2. parse
+3. normalize
+4. emit
+
+#### 40. harness-parse-hermes  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-sessions
+2. parse
+3. normalize
+4. emit
+
+#### 41. harness-parse-gsd  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-project-sessions
+2. parse
+3. normalize
+4. emit
+
+#### 42. rule-cross-harness-silo  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. aggregate-by-harness
+2. compute-distribution
+3. threshold-check
+4. flag-silo
+5. report
+
+#### 43. rule-mega-session-detect  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. measure-session-sizes
+2. threshold-check
+3. flag
+4. recommend-split
+
+#### 44. rule-doctrine-adherence  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-doctrine-patterns
+2. scan-sessions
+3. classify-gaps
+4. score-adherence
+5. report
+
+#### 45. rule-skill-usage-audit  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. count-skill-calls
+2. compare-baseline
+3. flag-low
+4. report
+
+#### 46. rule-context-injection-gap  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. scan-prompts
+2. check-context-markers
+3. flag-missing
+4. report
+
+#### 47. rule-terminal-overuse  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. scan-tool-calls
+2. classify-terminal-vs-tool
+3. compute-ratio
+4. flag
+5. recommend
+
+#### 48. run-closed-loop  `A4`
+
+_A4 · LLM-agent-free (crew)_
+
+1. enhance-prompt
+2. create-run-envelope
+3. dispatch-to-hermes
+4. monitor-execution
+5. capture-outcome
+6. learn-signals
+7. proofpacket
+
+#### 49. learn-session-signals  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-latest-session
+2. extract-events
+3. classify-outcome
+4. extract-patterns
+5. update-learning-store
+
+#### 50. coach-diagnostic  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-history
+2. compute-weakness-profile
+3. rank-issues
+4. generate-recommendations
+5. report
+
+#### 51. coach-trends  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-scored-history
+2. bucket-by-time
+3. compute-trend
+4. chart
+5. report
+
+#### 52. coach-weekly-report  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. gather-window
+2. compute-stats
+3. select-top-prompts
+4. narrate-summary
+5. emit
+
+#### 53. coach-stats-dashboard  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-history
+2. compute-metrics
+3. format-dashboard
+
+#### 54. template-semantic-search  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-templates
+2. embed-or-rank-query
+3. score-relevance
+4. return-top
+
+#### 55. template-builtin-fill  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. select-template
+2. collect-slots
+3. fill
+4. validate
+5. emit
+
+#### 56. template-category-browse  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. load-index
+2. filter-category
+3. paginate
+4. emit
+
+#### 57. mcp-server-serve  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-tool-registry
+2. start-stdio-loop
+3. route-rpc
+4. invoke-tool
+5. return-result
+
+#### 58. vscode-extension-activate  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. register-commands
+2. init-webview-panels
+3. wire-rpc
+4. warm-cache
+5. ready
+
+#### 59. app-local-serve  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. bind-localhost
+2. mount-static
+3. register-api-routes
+4. wire-prompt-master
+5. serve
+
+#### 60. app-smoke-validate  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. check-routes
+2. check-static
+3. check-api-contracts
+4. report
+
+#### 61. zsh-presend-hook  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. intercept-prompt
+2. score
+3. threshold-check
+4. warn-or-pass
+5. forward
+
+#### 62. watch-daemon-scan  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. scan-workspace
+2. compute-coaching
+3. diff-agents-md
+4. write-injection
+5. log
+
+#### 63. http-proxy-rewrite  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. accept-request
+2. extract-prompt
+3. score
+4. rewrite-if-below
+5. forward-to-target
+6. relay-response
+
+#### 64. install-cli  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. resolve-target
+2. check-existing
+3. copy-binary
+4. set-path-hint
+5. verify
+
+#### 65. install-hook  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-shell-rc
+2. inject-hook-source
+3. verify
+4. print-enable-cmd
+
+#### 66. install-mcp-register  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. locate-hermes-config
+2. add-server-entry
+3. validate-json
+4. verify
+
+#### 67. install-launchd  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. render-plist
+2. write-to-launchagents
+3. load-service
+4. verify-running
+
+#### 68. package-desktop-build  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. install-deps
+2. build-next
+3. wrap-desktop
+4. smoke
+5. emit-artifact
+
+#### 69. doctor-health-check  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. check-python
+2. check-node
+3. check-adapters
+4. check-installs
+5. report
+
+#### 70. doctrine-enforce-scan  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. load-doctrine
+2. scan-target
+3. classify-violations
+4. score
+5. report
+
+#### 71. repo-maturity-score  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. gather-signals
+2. weight-signals
+3. compute-score
+4. write-readme-block
+
+#### 72. readme-workflow-sync  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. read-json-workflows
+2. render-md-block
+3. diff-readme
+4. write-between-markers
+5. verify-roundtrip
+
+#### 73. release-tag-publish  `A4`
+
+_A4 · LLM-agent-free (crew)_
+
+1. run-full-test-suite
+2. bump-version
+3. build-artifacts
+4. proofpacket
+5. human-approval-gate
+6. push-tag-and-publish
+
+#### 74. proofpacket-seal  `A1`
+
+_A1 · Python-only (deterministic)_
+
+1. gather-evidence
+2. attach-commands
+3. attach-outputs
+4. hash
+5. write-sealed
+
+#### 75. bms-band-classify  `A2`
+
+_A2 · Hybrid (schema-constrained LLM)_
+
+1. parse-steps
+2. detect-determinism
+3. detect-external-impact
+4. assign-band
+5. justify
 <!-- AGENTFORGE:WORKFLOWS END -->
